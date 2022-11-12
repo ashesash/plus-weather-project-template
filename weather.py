@@ -43,37 +43,63 @@ DEGREE_SYBMOL = u"\N{DEGREE SIGN}C"
 
 # def calculate_mean(weather_data):
 #     # return statistics.mean(map(float,weather_data))
-#     data = map(float, weather_data)
-#     data_final = list(data)
+#     data = list(map(float, weather_data))
 #     total = 0.0
-#     for i in data_final:
+#     for i in data:
 #         total += i
-#     mean = total / len(data_final)
+#     mean = total / len(data)
 #     return mean
 
-    # """Calculates the mean value from a list of numbers.
+# """Calculates the mean value from a list of numbers.
 
-    # Args:
-    #     weather_data: a list of numbers.
-    # Returns:
-    #     A float representing the mean value.
-    # """
-    # pass
+# Args:
+#     weather_data: a list of numbers.
+# Returns:
+#     A float representing the mean value.
+# """
+# pass
 
 def load_data_from_csv(csv_file):
-    return 
+    with open(csv_file) as file:
+        reader = csv.reader(file)
+        next(file)
+        data_list = []
+        for row in reader:
+            if row != []:
+                list = [row[0], int(row[1]), int(row[2])]
+                data_list.append(list)
+        return data_list
 
-    """Reads a csv file and stores the data in a list.
+# print(load_data_from_csv("example_one"))
+# """Reads a csv file and stores the data in a list.
 
-    Args:
-        csv_file: a string representing the file path to a csv file.
-    Returns:
-        A list of lists, where each sublist is a (non-empty) line in the csv file.
-    """
-    pass
+# Args:
+#     csv_file: a string representing the file path to a csv file.
+# Returns:
+#     A list of lists, where each sublist is a (non-empty) line in the csv file.
+# """
+# pass
 
 
 # def find_min(weather_data):
+#     # min_number = min(data)
+#     # index = data.index(min_number)
+#     # return min_number, index
+#     data = list(map(float, weather_data))
+#     if weather_data:
+#         min_number = None
+#         for i in data:
+#             if min_number is None or i < min_number:
+#                 min_number = i
+#         for j in range(len(data)):
+#             if data[j] == min_number:
+#                 index = j
+#         return min_number, index            
+#     else:
+#         return()
+
+# print(find_min([3, 7, 5, 3, 2, 8, 2]))
+
 #     """Calculates the minimum value in a list of numbers.
 
 #     Args:
@@ -85,6 +111,21 @@ def load_data_from_csv(csv_file):
 
 
 # def find_max(weather_data):
+#     data = list(map(float, weather_data))
+#     if weather_data:
+#         max_number = None
+#         for i in data:
+#             if max_number is None or i > max_number:
+#                 max_number = i
+#         for j in range(len(data)):
+#             if data[j] == max_number:
+#                 index = j
+#         return max_number, index            
+#     else:
+#         return()
+
+# print(find_max([3, 7, 8, 3, 2, 8, 2]))
+
 #     """Calculates the maximum value in a list of numbers.
 
 #     Args:
