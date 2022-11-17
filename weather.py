@@ -2,44 +2,44 @@ import csv
 import statistics
 from datetime import datetime
 
-DEGREE_SYBMOL = u"\N{DEGREE SIGN}C"
+# DEGREE_SYMBOL = u"\N{DEGREE SIGN}C"
 
 
 # def format_temperature(temp):
-#     """Takes a temperature and returns it in string format with the degrees
-#         and celcius symbols.
+#     # """Takes a temperature and returns it in string format with the degrees
+#     #     and celsius symbols.
 
-#     Args:
-#         temp: A string representing a temperature.
-#     Returns:
-#         A string contain the temperature and "degrees celcius."
-#     """
-#     return f"{temp}{DEGREE_SYBMOL}"
+#     # Args:
+#     #     temp: A string representing a temperature.
+#     # Returns:
+#     #     A string contain the temperature and "degrees celsius."
+#     # """
+#     return f"{temp}{DEGREE_SYMBOL}"
 
 
 # def convert_date(iso_string):
 #     return datetime.fromisoformat(iso_string).strftime("%A %d %B %Y")
-#     """Converts and ISO formatted date into a human readable format.
+#     # """Converts and ISO formatted date into a human readable format.
 
-#     Args:
-#         iso_string: An ISO date string..
-#     Returns:
-#         A date formatted like: Weekday Date Month Year e.g. Tuesday 06 July 2021
-#     """
-#     pass
+#     # Args:
+#     #     iso_string: An ISO date string..
+#     # Returns:
+#     #     A date formatted like: Weekday Date Month Year e.g. Tuesday 06 July 2021
+#     # """
+#     # pass
 
 
 # def convert_f_to_c(temp_in_farenheit):
 #     return round(((float(temp_in_farenheit) - 32) * 5/ 9), 1)
 
-#     """Converts an temperature from farenheit to celcius.
+#     # """Converts an temperature from farenheit to celcius.
 
-#     Args:
-#         temp_in_farenheit: float representing a temperature.
-#     Returns:
-#         A float representing a temperature in degrees celcius, rounded to 1dp.
-#     """
-#     pass
+#     # Args:
+#     #     temp_in_farenheit: float representing a temperature.
+#     # Returns:
+#     #     A float representing a temperature in degrees celcius, rounded to 1dp.
+#     # """
+#     # pass
 
 # def calculate_mean(weather_data):
 #     # return statistics.mean(map(float,weather_data))
@@ -50,35 +50,35 @@ DEGREE_SYBMOL = u"\N{DEGREE SIGN}C"
 #     mean = total / len(data)
 #     return mean
 
-# """Calculates the mean value from a list of numbers.
+# # """Calculates the mean wdata from a list of numbers.
 
-# Args:
-#     weather_data: a list of numbers.
-# Returns:
-#     A float representing the mean value.
-# """
-# pass
+# # Args:
+# #     weather_data: a list of numbers.
+# # Returns:
+# #     A float representing the mean wdata.
+# # """
+# # pass
 
-def load_data_from_csv(csv_file):
-    with open(csv_file) as file:
-        reader = csv.reader(file)
-        next(file)
-        data_list = []
-        for row in reader:
-            if row != []:
-                list = [row[0], int(row[1]), int(row[2])]
-                data_list.append(list)
-        return data_list
+# def load_data_from_csv(csv_file):
+#     with open(csv_file) as file:
+#         reader = csv.reader(file)
+#         next(file)
+#         data_list = []
+#         for row in reader:
+#             if row != []:
+#                 list = [row[0], int(row[1]), int(row[2])]
+#                 data_list.append(list)
+#         return data_list
 
-# print(load_data_from_csv("example_one"))
-# """Reads a csv file and stores the data in a list.
+# # print(load_data_from_csv("example_one"))
+# # """Reads a csv file and stores the data in a list.
 
-# Args:
-#     csv_file: a string representing the file path to a csv file.
-# Returns:
-#     A list of lists, where each sublist is a (non-empty) line in the csv file.
-# """
-# pass
+# # Args:
+# #     csv_file: a string representing the file path to a csv file.
+# # Returns:
+# #     A list of lists, where each sublist is a (non-empty) line in the csv file.
+# # """
+# # pass
 
 
 # def find_min(weather_data):
@@ -98,16 +98,16 @@ def load_data_from_csv(csv_file):
 #     else:
 #         return()
 
-# print(find_min([3, 7, 5, 3, 2, 8, 2]))
+# # print(find_min([3, 7, 5, 3, 2, 8, 2]))
 
-#     """Calculates the minimum value in a list of numbers.
+# #     """Calculates the minimum wdata in a list of numbers.
 
-#     Args:
-#         weather_data: A list of numbers.
-#     Returns:
-#         The minium value and it's position in the list.
-#     """
-#     pass
+# #     Args:
+# #         weather_data: A list of numbers.
+# #     Returns:
+# #         The minium wdata and it's position in the list.
+# #     """
+# #     pass
 
 
 # def find_max(weather_data):
@@ -124,19 +124,31 @@ def load_data_from_csv(csv_file):
 #     else:
 #         return()
 
-# print(find_max([3, 7, 8, 3, 2, 8, 2]))
+# # print(find_max([3, 7, 8, 3, 2, 8, 2]))
 
-#     """Calculates the maximum value in a list of numbers.
+#     # """Calculates the maximum wdata in a list of numbers.
 
-#     Args:
-#         weather_data: A list of numbers.
-#     Returns:
-#         The maximum value and it's position in the list.
-#     """
-#     pass
+#     # Args:
+#     #     weather_data: A list of numbers.
+#     # Returns:
+#     #     The maximum wdata and it's position in the list.
+#     # """
+#     # pass
 
 
-# def generate_summary(weather_data):
+def generate_summary(weather_data):
+    num_days = len(weather_data)
+    min_temp = format_temperature(convert_f_to_c(weather_data))
+    print(min_temp)
+    return min_temp
+
+# 5 Day Overview
+#   The lowest temperature will be 9.4°C, and will occur on Friday 02 July 2021.
+#   The highest temperature will be 20.0°C, and will occur on Saturday 03 July 2021.
+#   The average low this week is 12.2°C.
+#   The average high this week is 17.8°C.
+
+
 #     """Outputs a summary for the given weather data.
 
 #     Args:
@@ -148,6 +160,20 @@ def load_data_from_csv(csv_file):
 
 
 # def generate_daily_summary(weather_data):
+#     summary = ""
+#     for wdata in weather_data:
+#         date = convert_date(wdata[0])
+#         min_temp = format_temperature(convert_f_to_c(wdata[1]))
+#         max_temp = format_temperature(convert_f_to_c(wdata[2]))
+#         summary = f"---- {date} ----\n  Minimum Temperature: {min_temp}\n  Maximum Temperature: {max_temp}\n\n"
+#     print(summary)
+#     return summary
+
+#date
+#max temp in c
+#min temp in c
+#all in result
+
 #     """Outputs a daily summary for the given weather data.
 
 #     Args:
