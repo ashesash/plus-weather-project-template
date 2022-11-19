@@ -158,9 +158,9 @@ def generate_summary(weather_data):
     max_mean = format_temperature(convert_f_to_c(calculate_mean(max_list)))
     return f"{num_days} Day Overview\n  The lowest temperature will be {min_temp}, and will occur on {min_date}.\n  The highest temperature will be {max_temp}, and will occur on {max_date}.\n  The average low this week is {min_mean}.\n  The average high this week is {max_mean}.\n"
 
-doc = load_data_from_csv('./tests/data/example_one.csv')
-print(generate_summary(doc))
-print(len(doc))
+# doc = load_data_from_csv('./tests/data/example_one.csv')
+# print(generate_summary(doc))
+# print(len(doc))
 
 #     """Outputs a summary for the given weather data.
 
