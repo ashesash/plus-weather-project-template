@@ -47,8 +47,7 @@ def calculate_mean(weather_data):
     total = 0.0
     for i in data:
         total += i
-    mean = total / len(data)
-    return mean
+    return total / len(data)
 
 # """Calculates the mean wdata from a list of numbers.
 
